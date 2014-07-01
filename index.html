@@ -12,26 +12,26 @@
 					var $fname = $('#fn').val();
 					var $lname = $('#ln').val();
 					var $desc = $('#desc').val();
-					$('#userTable h1').append(
+					$('#target').append(
 						'<div class="contact">' + 
 						'<table class="name"><tr><td class="fname">' + $fname + 
 						'</td><td class="lname">' + $lname + 
-						'</td></tr></table>' +  
+						'</td></tr><tr><td colspan="2">Click for Description</td></tr></table>' +  
 						'<table class="desc"><tr><td>' + $desc + 
 						'</td></tr></tr>'
 					);
+					$('.desc').hide();
 					return false;
 				});
-				$(document).on(function(){
-					$('.desc').hide();
-					$('.name').click(function(){
-						$(this).children('.name').toggle();
-						$(this).children('.desc').toggle();
-					});
-					$('.desc').click(function(){
-						$(this).children('.name').toggle();
-						$(this).children('.desc').toggle();
-					});
+				$(document).on('click', '.name', function(){
+						console.log(".name");
+						$(this).toggle();
+						$(this).siblings('.desc').toggle();
+				});
+				$(document).on('click', '.desc', function(){
+						console.log(".desc");
+						$(this).toggle();
+						$(this).siblings('.name').toggle();
 				});
 			});
 		</script>
@@ -41,6 +41,7 @@
 			<div id="container">
 				<div id="userTable">
 					<h1>User List</h1>
+					<div id="target"></div>
 				</div>
 				<div id="userAdd">
 					<h1>Add a User</h1>

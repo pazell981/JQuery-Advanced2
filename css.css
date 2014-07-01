@@ -20,22 +20,31 @@ input{
 	display: block;
 }
 .name{
-	display: inline-block;
 	width: 300px;
 	height: 200px;
 	border: 1px solid #000000;
 	margin: 10px auto;
 	font-size: 1em;
-	font-weight: bolder;
 	text-align: center;
 }
+.fname{
+	vertical-align: bottom;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: right;
+}
+.lname{
+	vertical-align: bottom;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: left;
+}
 .desc{
-	display: inline-block;
 	width: 300px;
 	height: 200px;
 	border: 1px solid #000000;
 	margin: 10px auto;
-	font-size: 1em;
+	font-size: 1.5em;
 	font-weight: normal;
 	text-align: center;
 }
