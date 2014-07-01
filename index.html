@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Advanced 2</title>
+		<meta name="description" content="JQUERY Assignment -07/01/14 - Advanced 2">
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('form').submit(function(){
+					var $fname = $('#fn').val();
+					var $lname = $('#ln').val();
+					var $desc = $('#desc').val();
+					$('#userTable h1').append(
+						'<div class="contact">' + 
+						'<table class="name"><tr><td class="fname">' + $fname + 
+						'</td><td class="lname">' + $lname + 
+						'</td></tr></table>' +  
+						'<table class="desc"><tr><td>' + $desc + 
+						'</td></tr></tr>'
+					);
+					return false;
+				});
+				$(document).on(function(){
+					$('.desc').hide();
+					$('.name').click(function(){
+						$(this).children('.name').toggle();
+						$(this).children('.desc').toggle();
+					});
+					$('.desc').click(function(){
+						$(this).children('.name').toggle();
+						$(this).children('.desc').toggle();
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="container">
+				<div id="userTable">
+					<h1>User List</h1>
+				</div>
+				<div id="userAdd">
+					<h1>Add a User</h1>
+					<form>
+						<label>First Name: <input type="text" value="First Name" id='fn'></label>
+						<label>Last Name: <input type="text" value="Last Name" id='ln'></label>
+						<label>Description: <textarea id='desc'>Enter Description</textarea></label>
+						<input type="submit" value="Submit" id="submit">
+					</form>
+				</div>
+			</div><!-- container -->
+		</div><!-- wrapper -->
+	</body>
+</html>
